@@ -93,7 +93,7 @@ header nav ul{
 header nav ul > li{
   list-style-type: none;
   display: inline-block;
-   margin:0 15px;
+  margin:0 15px;
  }
  header nav ul > li.btn-outline {
    padding:10px 15px;
@@ -244,10 +244,10 @@ header nav ul > li{
   font-style:italic;
 }
  /* TESTIMONIALS */
-.testimonials {
-  padding:4em 0;
-  text-align: center;
-}
+ .testimonials {
+   padding:4em 0;
+   text-align: center;
+ }
 .testimonials h2 {
   color:#3498DB;
 }
