@@ -542,3 +542,6 @@ footer .Site-Logo {
    line-height: 18px;
    margin:5px 0 0;
  }
+ i:active, a:active {
+    background-color: yellow;
+}
