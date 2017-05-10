@@ -1,0 +1,253 @@
+Last login: Wed May 10 17:23:03 on ttys001
+-bash: /Users/elysegollomp/.bash_profile: line 1: unexpected EOF while looking for matching `''
+-bash: /Users/elysegollomp/.bash_profile: line 5: syntax error: unexpected end of file
+cd desktop/development
+Elyses-MBP:~ elysegollomp$ cd desktop/development
+Elyses-MBP:development elysegollomp$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Elyses-MBP:development elysegollomp$ git config --global user.name "Elyse Gollomp"
+Elyses-MBP:development elysegollomp$ git config --global user.email elyse.gollomp@gmail.com
+Elyses-MBP:development elysegollomp$ git config --global color.ui true
+Elyses-MBP:development elysegollomp$ git config --global push.default simple
+Elyses-MBP:development elysegollomp$ cat ~/.gitconfig
+[user]
+	name = Elyse Gollomp
+	email = elyse.gollomp@gmail.com
+[color]
+	ui = true
+[push]
+	default = simple
+Elyses-MBP:development elysegollomp$ ls
+Atom				Terminal Saved Output2
+Blocbox				Terminal Saved Output2 copy
+HELP-US-OUT.txt			git_test
+Index.html			home
+Terminal Saved Output
+Elyses-MBP:development elysegollomp$ cd ~ 
+Elyses-MBP:~ elysegollomp$ mkdir -p bloc/shopping_cart
+Elyses-MBP:~ elysegollomp$ cd bloc/shopping_cart
+Elyses-MBP:shopping_cart elysegollomp$ pwd
+/Users/elysegollomp/bloc/shopping_cart
+Elyses-MBP:shopping_cart elysegollomp$ touch apple.txt
+Elyses-MBP:shopping_cart elysegollomp$ ls
+apple.txt
+Elyses-MBP:shopping_cart elysegollomp$ git init . 
+Initialized empty Git repository in /Users/elysegollomp/bloc/shopping_cart/.git/
+Elyses-MBP:shopping_cart elysegollomp$ ls -al 
+total 0
+drwxr-xr-x   4 elysegollomp  staff  136 May 10 17:56 .
+drwxr-xr-x   3 elysegollomp  staff  102 May 10 17:55 ..
+drwxr-xr-x  10 elysegollomp  staff  340 May 10 17:56 .git
+-rw-r--r--   1 elysegollomp  staff    0 May 10 17:55 apple.txt
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	apple.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+Elyses-MBP:shopping_cart elysegollomp$ git add apple.txt
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   apple.txt
+
+Elyses-MBP:shopping_cart elysegollomp$ touch banana.txt
+Elyses-MBP:shopping_cart elysegollomp$ ls
+apple.txt	banana.txt
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   apple.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	banana.txt
+
+Elyses-MBP:shopping_cart elysegollomp$ git commit -m "Create the apple.txt file"
+[master (root-commit) 1bb7a6f] Create the apple.txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 apple.txt
+Elyses-MBP:shopping_cart elysegollomp$ git add banana.txt
+Elyses-MBP:shopping_cart elysegollomp$ git commit -m "Add banana.txt"
+[master f3eaca4] Add banana.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 banana.txt
+Elyses-MBP:shopping_cart elysegollomp$ git log
+commit f3eaca45bf04b9e5fa2ebd65d227701bdac29e90
+Author: Elyse Gollomp <elyse.gollomp@gmail.com>
+Date:   Wed May 10 17:57:51 2017 -0400
+
+    Add banana.txt
+
+commit 1bb7a6fb241bc8e2469a4f91bdeaf18aaa92da60
+Author: Elyse Gollomp <elyse.gollomp@gmail.com>
+Date:   Wed May 10 17:57:27 2017 -0400
+
+    Create the apple.txt file
+Elyses-MBP:shopping_cart elysegollomp$ git show --pretty="format:" --name-only HEAD
+banana.txt
+Elyses-MBP:shopping_cart elysegollomp$ touch tomatoes.txt
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	tomatoes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+Elyses-MBP:shopping_cart elysegollomp$ touch .gitignore
+Elyses-MBP:shopping_cart elysegollomp$ echo "tomatoes.txt" >> .gitignore
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+Elyses-MBP:shopping_cart elysegollomp$ git add .gitignore
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .gitignore
+
+Elyses-MBP:shopping_cart elysegollomp$ git commit -m "Add .gitignore"
+[master 352c09e] Add .gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+Elyses-MBP:shopping_cart elysegollomp$ git rm rotten_apples.txt
+fatal: pathspec 'rotten_apples.txt' did not match any files
+Elyses-MBP:shopping_cart elysegollomp$ ls
+apple.txt	banana.txt	tomatoes.txt
+Elyses-MBP:shopping_cart elysegollomp$ git checkout -b new_grocery_list
+Switched to a new branch 'new_grocery_list'
+Elyses-MBP:shopping_cart elysegollomp$ git branch
+  master
+* new_grocery_list
+Elyses-MBP:shopping_cart elysegollomp$ ls
+apple.txt	banana.txt	tomatoes.txt
+Elyses-MBP:shopping_cart elysegollomp$ touch orange.txt
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch new_grocery_list
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	orange.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+Elyses-MBP:shopping_cart elysegollomp$ git add orange.txt
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch new_grocery_list
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   orange.txt
+
+Elyses-MBP:shopping_cart elysegollomp$ git commit -m "Add orange.txt on new_grocery_list"
+[new_grocery_list 5c25b6d] Add orange.txt on new_grocery_list
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 orange.txt
+Elyses-MBP:shopping_cart elysegollomp$ git checkout master
+Switched to branch 'master'
+Elyses-MBP:shopping_cart elysegollomp$ git checkout -b shopping_cart_assignment
+Switched to a new branch 'shopping_cart_assignment'
+Elyses-MBP:shopping_cart elysegollomp$ git rm apple.txt
+rm 'apple.txt'
+Elyses-MBP:shopping_cart elysegollomp$ pwd
+/Users/elysegollomp/bloc/shopping_cart
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch shopping_cart_assignment
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    apple.txt
+
+Elyses-MBP:shopping_cart elysegollomp$ ls
+banana.txt	tomatoes.txt
+Elyses-MBP:shopping_cart elysegollomp$ banana.txt
+-bash: banana.txt: command not found
+Elyses-MBP:shopping_cart elysegollomp$ echo "Git Checkpoint Assignment." >> banana.txt
+Elyses-MBP:shopping_cart elysegollomp$ cat banana.txt
+Git Checkpoint Assignment.
+Elyses-MBP:shopping_cart elysegollomp$ git status
+On branch shopping_cart_assignment
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    apple.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   banana.txt
+
+Elyses-MBP:shopping_cart elysegollomp$ ls
+banana.txt	tomatoes.txt
+Elyses-MBP:shopping_cart elysegollomp$ touch lettuce.txt
+Elyses-MBP:shopping_cart elysegollomp$ git diff > lettuce.txt
+Elyses-MBP:shopping_cart elysegollomp$ cat lettuce.txt
+diff --git a/banana.txt b/banana.txt
+index e69de29..4db914f 100644
+--- a/banana.txt
++++ b/banana.txt
+@@ -0,0 +1 @@
++Git Checkpoint Assignment.
+Elyses-MBP:shopping_cart elysegollomp$ pwd
+/Users/elysegollomp/bloc/shopping_cart
+Elyses-MBP:shopping_cart elysegollomp$ ls
+banana.txt	lettuce.txt	tomatoes.txt
+Elyses-MBP:shopping_cart elysegollomp$ git commit -m "Git Checkpoint Assignment"
+[shopping_cart_assignment 84f4677] Git Checkpoint Assignment
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 apple.txt
+Elyses-MBP:shopping_cart elysegollomp$ cat lettuce.txt
+diff --git a/banana.txt b/banana.txt
+index e69de29..4db914f 100644
+--- a/banana.txt
++++ b/banana.txt
+@@ -0,0 +1 @@
++Git Checkpoint Assignment.
+Elyses-MBP:shopping_cart elysegollomp$ pwd
+/Users/elysegollomp/bloc/shopping_cart
+Elyses-MBP:shopping_cart elysegollomp$ ls
+banana.txt	lettuce.txt	tomatoes.txt
+Elyses-MBP:shopping_cart elysegollomp$ git add . 
+Elyses-MBP:shopping_cart elysegollomp$ git commit -m "shopping_cart_assignment"
+[shopping_cart_assignment d718900] shopping_cart_assignment
+ 2 files changed, 7 insertions(+)
+ create mode 100644 lettuce.txt
+Elyses-MBP:shopping_cart elysegollomp$ 
