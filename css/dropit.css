@@ -50,3 +50,14 @@
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight:100;
  }
+
+.settings .dropit .dropit-open .dropit-submenu {
+  bottom: 100%;
+  top: inherit;
+}
+
+.settings .dropit .dropit-open .dropit-submenu:after {
+  border-width: 8px 8px 0;
+  bottom: -8px;
+  top: inherit;
+}
